@@ -1,0 +1,47 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(49, 49, 49);
+    color: white;
+}
+
+.navbar .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
+}
+
+.navmenu {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbrand {
+    text-decoration: none;
+    color: inherit;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.navmenu a {
+    padding: 2rem;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
+.loginBtn {
+    background-color: black;
+    color: inherit;
+    height: 80%;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
