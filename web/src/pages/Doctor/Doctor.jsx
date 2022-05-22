@@ -2,7 +2,7 @@
 const Doctor = () => {
     return (
       <div className="container">
-        <h1>Doctor Page</h1>
+        <h1 style={{ textAlign: "center", fontSize: "3.2rem" }}>Doctor Page</h1>
       </div>
     )
   }

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ethers } from 'ethers'
 import './AuthPage.css'
 
-const Login = ({ setIsLoggedIn, setCurrUser, setCurrBalance, setIsLoading }) => {
+const Login = ({ accountChangedHandler, setIsLoading }) => {
     const [error, setError] = useState(null);
 
     const connectMetaMask = () => {
@@ -16,21 +16,6 @@ const Login = ({ setIsLoggedIn, setCurrUser, setCurrBalance, setIsLoading }) => 
       }
       else setError("Metamask not installed")
     }
-
-    const accountChangedHandler = (newAccount) => {
-        // update user
-        setCurrUser(newAccount)
-        setIsLoggedIn(true)
-
-        // update balance
-        window.ethereum.request({ method: "eth_getBalance", params: [ newAccount.toString(), 'latest' ] })
-        .then(balance => {
-          setCurrBalance(ethers.utils.formatEther(balance))
-          setIsLoading(false)
-        })
-    }
-
-    window.ethereum.on('accountsChanged', accountChangedHandler)
 
     return (
       <div className="container">
@@ -50,22 +35,31 @@ const Login = ({ setIsLoggedIn, setCurrUser, setCurrBalance, setIsLoading }) => 
 const Profile = ({ currUser, currBalance, isLoading }) => {
     return(
         <div className="container">
-            {
-                isLoading ?
-                <h1 style={{ textAlign: "center", fontSize: "3.2rem" }}>Loading ... </h1>
-                :
-                <>
-                    <h1>Profile Page</h1>
-                    <h1>Address: {currUser}</h1>
-                    <h1>Balance: {currBalance}</h1>
-                </>
-            }
+            <h1 style={{ textAlign: "center", fontSize: "3.2rem" }}>Profile Page</h1>
+            <h1 style={{ textAlign: "center", fontSize: "3.2rem" }}>Address: {currUser}</h1>
+            <h1 style={{ textAlign: "center", fontSize: "3.2rem" }}>Balance: { isLoading ? "Loading ..." : currBalance}</h1> 
         </div>
     )
 }
 
 const AuthPage = ({ isLoggedIn, currUser, currBalance, setIsLoggedIn, setCurrUser, setCurrBalance }) => {
     const [isLoading, setIsLoading] = useState(false);
+
+    const accountChangedHandler = (newAccount) => {
+        // update user
+        setCurrUser(newAccount)
+        setIsLoggedIn(true)
+
+        // update balance
+        window.ethereum.request({ method: "eth_getBalance", params: [ newAccount.toString(), 'latest' ] })
+        .then(balance => {
+          setCurrBalance(ethers.utils.formatEther(balance))
+          setIsLoading(false)
+        })
+    }
+
+    window.ethereum.on('accountsChanged', accountChangedHandler)
+
     return (
         <div className='authpage'>
         {
@@ -77,6 +71,7 @@ const AuthPage = ({ isLoggedIn, currUser, currBalance, setIsLoggedIn, setCurrUse
                 setCurrUser={setCurrUser} 
                 setCurrBalance={setCurrBalance} 
                 setIsLoading={setIsLoading} 
+                accountChangedHandler={accountChangedHandler}
             />
         }
         </div>
