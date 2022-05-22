@@ -1,0 +1,47 @@
+.login-roles {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2rem;
+    margin: 2rem 0;
+}
+
+.login-role-card {
+    border-radius: 1rem;
+    box-shadow: 0 0 0.75rem;
+    display: grid;
+    grid-template-rows: 6fr 1.5fr 2.5fr;
+    padding: 1rem 0 ;
+}
+
+.login-role-card div {
+    width: 100%;
+    /* border: 2px solid red; */
+}
+
+.loginBtn {
+    width: 80%;
+    margin: 1rem auto;
+    padding: 1rem;
+    font-size: 2rem;
+    border-style: none;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.auth-role-name, .auth-role-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-role-name {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.auth-role-icon {
+    font-size: 7rem;
+}

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import "./Navbar.css"
 
-const Navbar = ({ isLoggedIn, currUser }) => {
+const Navbar = ({ isLoggedIn, currUser, role }) => {
 
   useEffect(() => {
     console.log("Auth status OR user changed")
@@ -22,9 +22,9 @@ const Navbar = ({ isLoggedIn, currUser }) => {
               </>
               :
               <>
-                <Link to="/doctor">Doctor</Link>
-                <Link to="/patient">Patient</Link>
-                <Link to="/manager">Hospital</Link>
+                { (role === 'Doctor') && <Link to="/doctor">Doctor</Link>}
+                { (role === 'Patient') && <Link to="/patient">Patient</Link>}
+                { (role === 'Hospital') && <Link to="/manager">Hospital</Link>}
                 <Link to="/auth" className='navlogin'>Profile</Link>
               </>
             }

@@ -12,21 +12,24 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currUser, setCurrUser] = useState(null);
   const [currBalance, setCurrBalance] = useState(null);
+  const [role, setRole] = useState(null);
   return (
     <div style={{ position: "relative", width: "100%", minHeight: "100vh" }}>
       <BrowserRouter>
-        <Navbar isLoggedIn={isLoggedIn} currUser={currUser} />
+        <Navbar isLoggedIn={isLoggedIn} currUser={currUser} role={role} />
         <Routes>
           <Route path='/' exact element={<Home />} />
-          <Route path='/patient' element={<Patient />} />
-          <Route path='/doctor' element={<Doctor />} />
-          <Route path='/manager' element={<Manager />} />
+          <Route path='/patient' element={<Patient isLoggedIn={isLoggedIn} role={role} />} />
+          <Route path='/doctor' element={<Doctor isLoggedIn={isLoggedIn} role={role} />} />
+          <Route path='/manager' element={<Manager isLoggedIn={isLoggedIn} role={role} />} />
           <Route path='/auth' element={<AuthPage setIsLoggedIn={setIsLoggedIn} 
                                                  setCurrUser={setCurrUser} 
                                                  setCurrBalance={setCurrBalance} 
                                                  isLoggedIn={isLoggedIn}
                                                  currUser={currUser}
-                                                 currBalance={currBalance} />} />
+                                                 currBalance={currBalance}
+                                                 role={role}
+                                                 setRole={setRole} />} />
           <Route path='*' element={<Home />} />
         </Routes>
         <Footer />
