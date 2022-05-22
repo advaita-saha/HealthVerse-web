@@ -36,12 +36,6 @@
     font-size: 1.6rem;
 }
 
-.loginBtn {
+.navlogin {
     background-color: black;
-    color: inherit;
-    height: 80%;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-size: 1.6rem;
-    cursor: pointer;
 }

@@ -1,8 +1,8 @@
-
+import './Home.css'
 const Home = () => {
   return (
     <div className="container">
-      <h1>Home Page</h1>
+      <h1 style={{ textAlign: "center", fontSize: "3.2rem" }}>Landing Page</h1>
     </div>
   )
 }
