@@ -14,7 +14,7 @@ const App = () => {
   const [currBalance, setCurrBalance] = useState(null);
   const [role, setRole] = useState(null);
   return (
-    <div style={{ position: "relative", width: "100%", minHeight: "100vh" }}>
+    <div style={{ position: "relative", width: "100%", minHeight: "100vh", paddingBottom: "35rem" }}>
       <BrowserRouter>
         <Navbar isLoggedIn={isLoggedIn} currUser={currUser} role={role} />
         <Routes>

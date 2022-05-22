@@ -40,7 +40,7 @@ const Login = ({ accountChangedHandler, setIsLoading }) => {
                 roles.map(role => {
                     return(
                         <div className='login-role-card'>
-                            <div className='auth-role-icon'><i className={role.icon}></i></div>
+                            <div className='auth-role-icon'><i className={role.icon} style={{ color: "var(--secondary)" }}></i></div>
                             <div className='auth-role-name'>{role.name}</div>
                             <button className="loginBtn" onClick={() => connectMetaMask(role.name)}>Connect Wallet</button>
                         </div>

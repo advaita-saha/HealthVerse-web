@@ -1,0 +1,49 @@
+.landing-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    margin-top: 3rem;
+}
+
+.landing-grid .image img {
+    width: 100%;
+    /* border: 2px solid blue; */
+}
+
+/* .hero > * {
+    border: 2px solid red;
+} */
+
+.hero-cta {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    text-decoration: none;
+    background-color: var(--primary);
+    color: white;
+    font-size: 2.4rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+}
+
+.hero-desc {
+    padding: 5rem 2.5rem;
+}
+
+/* .hero-desc > * {
+    border: 2px solid green;
+} */
+
+.hero-heading {
+    font-size: 4.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    line-height: 5.2rem;
+}
+
+.hero-txt {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}

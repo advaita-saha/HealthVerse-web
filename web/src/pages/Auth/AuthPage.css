@@ -27,7 +27,7 @@
     border-style: none;
     border-radius: 0.5rem;
     color: white;
-    background-color: black;
+    background-color: var(--primary);
     cursor: pointer;
 }
 

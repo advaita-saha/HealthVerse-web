@@ -3,8 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(49, 49, 49);
-    color: white;
+    background-color: white;
+    color: black;
+    /* border: 2px solid red; */
 }
 
 .navbar .container {
@@ -16,7 +17,6 @@
 }
 
 .navmenu {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,18 +24,23 @@
 
 .navbrand {
     text-decoration: none;
-    color: inherit;
+    color: var(--secondary);
     font-size: 2.4rem;
     font-weight: 600;
 }
 
 .navmenu a {
     padding: 2rem;
-    color: inherit;
+    padding-right: 5rem;
     text-decoration: none;
-    font-size: 1.6rem;
+    font-size: 2rem;
 }
 
-.navlogin {
-    background-color: black;
+.navmenu .navlogin {
+    background-color: var(--primary);
+    border-radius: 2rem;
+    padding: 0.5rem 3rem;
+    height: fit-content;
+    color: white;
+    /* border: 2px solid red; */
 }

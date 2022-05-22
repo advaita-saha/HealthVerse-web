@@ -12,16 +12,18 @@ const Navbar = ({ isLoggedIn, currUser, role }) => {
         <div className="container">
           <Link to="/" className="navbrand">
               <i className="fa-solid fa-house-medical" style={{ marginRight: "1.5rem" }}></i> 
-              Healthverse
+              HealthVerse
           </Link>
           <ul className="navmenu">
             {
               ((!isLoggedIn) && (currUser === null)) ?
               <>
-                <Link to="/auth" className='navlogin'>Login</Link>
+                <a>FAQs</a>
+                <Link to="/auth" className='navlogin'>Sign In</Link>
               </>
               :
               <>
+                <a href="#">FAQs</a>
                 { (role === 'Doctor') && <Link to="/doctor">Doctor</Link>}
                 { (role === 'Patient') && <Link to="/patient">Patient</Link>}
                 { (role === 'Hospital') && <Link to="/manager">Hospital</Link>}
